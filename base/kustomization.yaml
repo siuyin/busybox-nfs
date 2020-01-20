@@ -1,0 +1,10 @@
+namePrefix: bbn- # busybox nfs
+commonLabels:
+  sys: bbn
+  stage: dev
+configMapGenerator:
+- name: cfg
+  literals:
+  - STAGE=dev
+resources:
+- deployment.yaml
