@@ -16,7 +16,7 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /data/gerbau
+    path: /data/bbn-busybox-nfs
     server: 192.168.39.1
     #    path: /mnt/data
     #    server: 192.168.1.98
