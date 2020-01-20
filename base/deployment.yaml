@@ -39,7 +39,7 @@ spec:
   volumeMode: Filesystem
   resources:
     requests:
-      storage: 5Gi
+      storage: 1
   storageClassName: nfs
   selector:
     matchLabels:

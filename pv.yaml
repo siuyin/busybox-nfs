@@ -6,7 +6,7 @@ metadata:
     name: nfs-data
 spec:
   capacity:
-    storage: 5Gi
+    storage: 1
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -16,5 +16,7 @@ spec:
     - hard
     - nfsvers=4.1
   nfs:
-    path: /mnt/data
-    server: 192.168.1.98
+    path: /data/gerbau
+    server: 192.168.39.1
+    #    path: /mnt/data
+    #    server: 192.168.1.98
