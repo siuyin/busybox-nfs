@@ -5,7 +5,7 @@
    kubectl create -f pv.yaml
    ```
 
-1. To deploy run:
+1. To deploy, run:
    ```
    kubectl apply -k base.  (kubectl version >= 1.14)
    Or
