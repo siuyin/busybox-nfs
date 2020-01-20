@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-data-prod
+  labels:
+    name: nfs-data-prod
+spec:
+  capacity:
+    storage: 1
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /data/bbn-busybox-nfs-prod
+    server: 192.168.39.1
