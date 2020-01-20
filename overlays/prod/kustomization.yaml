@@ -6,7 +6,7 @@ configMapGenerator:
   behavior: merge
   literals:
   - STAGE=prod
-resources:
+bases:
 - ../../base
 patches:
 - nfs-storage-path.yaml
