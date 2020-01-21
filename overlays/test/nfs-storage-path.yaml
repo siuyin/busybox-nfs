@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox
+spec:
+  template:
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: bbn-nfs-data-claim-test
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-data-claim
+spec:
+  selector:
+    matchLabels:
+      name: "nfs-data-test"

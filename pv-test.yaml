@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-data-test
+  labels:
+    name: nfs-data-test
+spec:
+  capacity:
+    storage: 1
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /data/bbn-busybox-nfs-test
+    server: 192.168.39.1

@@ -1,0 +1,12 @@
+nameSuffix: -test
+commonLabels:
+  stage: test
+configMapGenerator:
+- name: cfg
+  behavior: merge
+  literals:
+  - STAGE=test
+bases:
+- ../../base
+patches:
+- nfs-storage-path.yaml
