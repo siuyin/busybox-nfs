@@ -8,3 +8,4 @@ configMapGenerator:
   - STAGE=dev
 resources:
 - deployment.yaml
+- hello-deployment.yaml

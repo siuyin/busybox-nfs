@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-nfs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-nfs
+  template:
+    metadata:
+      labels:
+        app: hello-nfs
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: hello-nfs
+        image: siuyin/junk
+        envFrom:
+        - configMapRef:
+            name: cfg
+        volumeMounts:
+        - mountPath: "/data"
+          name: data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: nfs-data-claim
